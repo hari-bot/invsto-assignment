@@ -1,10 +1,13 @@
-import { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleDarkMode } from "../actions";
 
 const DarkModeToggle = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const dispatch = useDispatch();
+  const darkMode = useSelector((state) => state.ui.darkMode);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+  const handleToggleDarkMode = () => {
+    dispatch(toggleDarkMode());
     if (darkMode) {
       document.body.classList.remove("dark");
     } else {
@@ -14,7 +17,7 @@ const DarkModeToggle = () => {
 
   return (
     <button
-      onClick={toggleDarkMode}
+      onClick={handleToggleDarkMode}
       className={`${
         darkMode ? "bg-gray-800" : "bg-gray-400"
       } w-10 h-6 rounded-full p-1 flex items-center focus:outline-none`}

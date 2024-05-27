@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setSliderValue, setBilling } from "../actions";
 import check from "../assets/images/icon-check.svg";
 import "../card.css";
 
@@ -11,10 +13,11 @@ const sliderMapping = {
 };
 
 const Card = () => {
-  const [sliderValue, setSliderValue] = useState("50");
+  const dispatch = useDispatch();
+  const sliderValue = useSelector((state) => state.data.sliderValue);
+  const monthlyBilling = useSelector((state) => state.data.monthlyBilling);
   const [pageview, setPageView] = useState(sliderMapping[sliderValue].pageView);
   const [amount, setAmount] = useState(sliderMapping[sliderValue].amount);
-  const [monthlyBilling, setMonthlyBilling] = useState(true);
 
   useEffect(() => {
     const mapping = sliderMapping[sliderValue];
@@ -25,7 +28,7 @@ const Card = () => {
   }, [sliderValue]);
 
   const calculateSliderGradient = () => {
-    const percentage = (Number(sliderValue) / 100) * 100;
+    const percentage = (sliderValue / 100) * 100;
     return `linear-gradient(to right, hsl(174, 86%, 45%) ${percentage}%, hsl(224, 65%, 95%) 0% , hsl(224, 65%, 95%) 100%)`;
   };
 
@@ -46,7 +49,7 @@ const Card = () => {
               max="100"
               step="25"
               value={sliderValue}
-              onChange={(e) => setSliderValue(e.target.value)}
+              onChange={(e) => dispatch(setSliderValue(e.target.value))}
               className="range-slider"
               style={{ background: sliderGradient }}
             />
@@ -72,7 +75,7 @@ const Card = () => {
             <input
               type="checkbox"
               checked={monthlyBilling}
-              onChange={() => setMonthlyBilling(!monthlyBilling)}
+              onChange={() => dispatch(setBilling(!monthlyBilling))}
             />
             <span className="slider round hover:bg-cyan-soft"></span>
           </label>
