@@ -33,7 +33,7 @@ const Card = () => {
 
   return (
     <div className="flex justify-center font-display">
-      <div className="relative -top-20 md:-top-24 bg-cyan-white dark:bg-gray-600 flex flex-col items-center w-10/12 py-10 rounded-2xl shadow-2xl md:w-7/12 lg:w-[30%]">
+      <div className="relative -top-20 md:-top-24 bg-cyan-white dark:bg-gray-800 flex flex-col items-center w-10/12 py-10 rounded-2xl shadow-2xl md:w-7/12 lg:w-[30%]">
         <div className="w-full px-4 md:flex md:justify-between md:flex-wrap md:px-9 md:items-center">
           <div className="text-bluish-grayish dark:text-gray-300 tracking-widest mb-12 text-center md:mb-0">
             {pageview} PAGEVIEWS

@@ -5,12 +5,15 @@ import DarkModeToggle from "./DarkModeToggle";
 const Heading = () => {
   return (
     <>
-      <DarkModeToggle />
+      <div className="absolute right-0 m-4 z-10 flex gap-2 items-center">
+        <span className="dark:text-white font-semibold text-sm">Dark Mode</span>{" "}
+        <DarkModeToggle />
+      </div>
       <div className="text-center ">
         <div className="header relative flex flex-col items-center h-96 mb-6 ">
           <img
             src={bgPattern}
-            className="bg-img absolute min-h-[100%] md:min-h-auto min-w-[100%] filter-none dark:filter sepia-[25%] brightness-100 invert-[80%] contrast-10"
+            className="bg-img absolute min-h-[100%] md:min-h-auto min-w-[100%] filter-none dark:filter grayscale-[100%] brightness-0 contrast-100"
           />
 
           <img

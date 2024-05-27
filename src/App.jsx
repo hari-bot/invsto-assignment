@@ -3,7 +3,7 @@ import Heading from "./components/Heading";
 
 const App = () => {
   return (
-    <div>
+    <div className="bg-bluish-very min-h-screen dark:bg-[#171717]">
       <Heading />
       <Card />
     </div>
