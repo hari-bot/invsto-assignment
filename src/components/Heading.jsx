@@ -5,7 +5,7 @@ import DarkModeToggle from "./DarkModeToggle";
 const Heading = () => {
   return (
     <>
-      <div className="absolute right-0 m-4 z-10 flex gap-2 items-center">
+      <div className="absolute right-0 m-4 z-50 flex gap-2 items-center">
         <span className="dark:text-white font-semibold text-sm">Dark Mode</span>{" "}
         <DarkModeToggle />
       </div>

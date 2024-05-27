@@ -113,7 +113,7 @@ const Card = () => {
               </div>
             </div>
           </div>
-          <button className="text-bluish-lightGrayish dark:text-white dark:hover:text-gray-400 hover:text-cyan-white bg-bluish-dark px-12 py-3 rounded-full">
+          <button className="text-bluish-lightGrayish dark:text-white dark:hover:text-gray-400 hover:text-cyan-white bg-bluish-dark dark:bg-blue-900 px-12 py-3 rounded-full">
             Start my trial
           </button>
         </div>
